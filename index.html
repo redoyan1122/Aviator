@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviator Predictor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #06151f;
+      color: #00ffd0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .box {
+      background: #0e2a38;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.4);
+      text-align: center;
+      width: 300px;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .predict-btn {
+      padding: 12px 20px;
+      font-size: 1rem;
+      background: #00b894;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #00ffcc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Aviator Predictor</h1>
+    <button class="predict-btn" onclick="predictMultiplier()">Predict</button>
+    <div class="result" id="result">Waiting...</div>
+  </div>
+
+  <script>
+    function predictMultiplier() {
+      const multiplier = (Math.random() * (20 - 1.01) + 1.01).toFixed(2);
+      const resultBox = document.getElementById('result');
+      resultBox.innerText = `🎯 Next Multiplier: ${multiplier}x`;
+    }
+  </script>
+</body>
+</html>
